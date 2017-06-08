@@ -12,7 +12,7 @@ import java.util.List;
 public class CSVActions {
 
 	List<String> csvArray = new ArrayList<>();
-	
+
 	String fileName = "MailPackages.txt";
 
 	public void CSVReader() {
@@ -37,7 +37,7 @@ public class CSVActions {
 	}
 
 	public int CSVSearch(String name) {
-		int CSVFound = 0;
+		int CSVFound = -1;
 
 		String line = null;
 
@@ -66,69 +66,68 @@ public class CSVActions {
 
 	public void CSVChangingReceived(String name) {
 		int csvFound = CSVSearch(name);
-		String csvConverted = csvArray.get(csvFound).toString();
-		String[] csvString = csvConverted.split(";");
-		//System.out.println(csvString[7]);
-		if(csvString[7].equals("true")) {
-			csvString[7] = "false";
-		} else {
-			csvString[7] = "true";
-		}
-		//System.out.println(csvString[7]);
-		csvArray.set(csvFound, csvString[0] + ";" + csvString[1] + ";" + csvString[2] + ";" + csvString[3] + ";"
-				+ csvString[4] + ";" + csvString[5] + ";" + csvString[6] + ";" + csvString[7]);
-		//System.out.println(csvArray.get(csvFound));
-
-		//////////////////////////////////////
-
-		try {
-			FileReader fileReader = new FileReader(fileName);
-
-			FileWriter fileWriter = new FileWriter(fileName);
-
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-			BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
-
-			for (int i = 0; i < csvArray.size(); i++) {
-				bufferedWritter.write(csvArray.get(i) + "\n");
+			String csvConverted = csvArray.get(csvFound).toString();
+			String[] csvString = csvConverted.split(";");
+			// System.out.println(csvString[7]);
+			if (csvString[7].equals("true")) {
+				csvString[7] = "false";
+			} else {
+				csvString[7] = "true";
 			}
-			bufferedReader.close();
-			bufferedWritter.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("Unable to open file '" + fileName + "'");
-		} catch (IOException e) {
-			System.out.println("Error reading file '" + fileName + "'");
-		}
+			// System.out.println(csvString[7]);
+			csvArray.set(csvFound, csvString[0] + ";" + csvString[1] + ";" + csvString[2] + ";" + csvString[3] + ";"
+					+ csvString[4] + ";" + csvString[5] + ";" + csvString[6] + ";" + csvString[7]);
+			// System.out.println(csvArray.get(csvFound));
+
+			//////////////////////////////////////
+
+			try {
+				FileReader fileReader = new FileReader(fileName);
+
+				FileWriter fileWriter = new FileWriter(fileName);
+
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+				BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
+
+				for (int i = 0; i < csvArray.size(); i++) {
+					bufferedWritter.write(csvArray.get(i) + "\n");
+				}
+				bufferedReader.close();
+				bufferedWritter.close();
+			} catch (FileNotFoundException e) {
+				System.out.println("Unable to open file '" + fileName + "'");
+			} catch (IOException e) {
+				System.out.println("Error reading file '" + fileName + "'");
+			}
 		
 		csvArray.clear();
+
 	}
-	
+
 	public void CSVDeleting(String name) {
 		int csvFound = CSVSearch(name);
-		if(csvFound != 0) {
 			csvArray.remove(csvFound);
-		}		
-		try {
-			FileReader fileReader = new FileReader(fileName);
 
-			FileWriter fileWriter = new FileWriter(fileName, false);
+			try {
+				FileReader fileReader = new FileReader(fileName);
 
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
+				FileWriter fileWriter = new FileWriter(fileName, false);
 
-			BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-			for (int i = 0; i < csvArray.size(); i++) {
-				bufferedWritter.write(csvArray.get(i) + "\n");
+				BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
+
+				for (int i = 0; i < csvArray.size(); i++) {
+					bufferedWritter.write(csvArray.get(i) + "\n");
+				}
+				bufferedReader.close();
+				bufferedWritter.close();
+			} catch (FileNotFoundException e) {
+				System.out.println("Unable to open file '" + fileName + "'");
+			} catch (IOException e) {
+				System.out.println("Error reading file '" + fileName + "'");
 			}
-			bufferedReader.close();
-			bufferedWritter.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("Unable to open file '" + fileName + "'");
-		} catch (IOException e) {
-			System.out.println("Error reading file '" + fileName + "'");
-		}
-		
 		csvArray.clear();
 	}
 

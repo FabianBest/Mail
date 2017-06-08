@@ -1,3 +1,3 @@
-sName;sSurname;sAddress;rAddress;rName;rSurname;mailMan;received
-Konieczkowa 22/1;Lukasz;Harabaka;Miloszww 312/1;Mikolaj;Stewczyk;Zdzislaw Stonoga;true
-Konieczko;dasdk;daskdsajdsa;sadcxz;dsadsad;dasdsad;Zdzislaw Stonoga;false
+Kielecka;Lukasz;Harambe;Dernowicza;Kisiel;Budyniowy;Zdzis³aw Stonoga;false
+Mala;Kuba;Debrowicz;Duza;Karol;Wojtyla;W³adimir Putin;false
+Milosz;Maciej;Gietki;Mercewiczka;Daniel;Jaknaraziemamdwiejedynki;Zdzis³aw Stonoga;false

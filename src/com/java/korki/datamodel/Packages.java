@@ -24,7 +24,7 @@ public class Packages implements CSVHandler {
 	private boolean received;
 	
 	public Packages() {
-		csvHandler();
+		
 	}
 	
 	public void CreatingPackages() {
@@ -68,11 +68,11 @@ public class Packages implements CSVHandler {
 
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 			
-			bufferedWriter.newLine();
-			
 			bufferedWriter.write(senderAddress + ";" + senderName + ";" + senderSurname + ";" +
 					receiverAddress + ";" + receiverName + ";" + receiverSurname + ";" +
 					mailMan + ";" + received);	
+			
+			bufferedWriter.newLine();
 		
 		bufferedWriter.close();
 	} catch(FileNotFoundException e) {
