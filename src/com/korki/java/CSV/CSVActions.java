@@ -1,43 +1,31 @@
-package com.java.korki.main;
+package com.korki.java.CSV;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Main {
+public class CSVActions {
 
-	public static void main(String[] args) {
+	public void CSVReader() {
 		String fileName = "MailPackages.txt";
 
 		String line = null;
 
-		try
-		{
-			// FileReader reads text files in the default encoding.
+		try {
 			FileReader fileReader = new FileReader(fileName);
 
-			// Always wrap FileReader in BufferedReader.
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 			while ((line = bufferedReader.readLine()) != null) {
 				System.out.println(line);
 			}
-
-			// Always close files.
 			bufferedReader.close();
-		}catch(
-		FileNotFoundException e)
-		{
+		} catch (FileNotFoundException e) {
 			System.out.println("Unable to open file '" + fileName + "'");
-		}catch(
-		IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println("Error reading file '" + fileName + "'");
-			// Or we could just do this:
-			// ex.printStackTrace();
 		}
-
 
 	}
 
