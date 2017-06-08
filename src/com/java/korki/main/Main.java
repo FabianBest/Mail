@@ -1,44 +1,11 @@
 package com.java.korki.main;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import com.java.korki.datamodel.Packages;
 
 public class Main {
 
 	public static void main(String[] args) {
-		String fileName = "MailPackages.txt";
-
-		String line = null;
-
-		try
-		{
-			// FileReader reads text files in the default encoding.
-			FileReader fileReader = new FileReader(fileName);
-
-			// Always wrap FileReader in BufferedReader.
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-			while ((line = bufferedReader.readLine()) != null) {
-				System.out.println(line);
-			}
-
-			// Always close files.
-			bufferedReader.close();
-		}catch(
-		FileNotFoundException e)
-		{
-			System.out.println("Unable to open file '" + fileName + "'");
-		}catch(
-		IOException e)
-		{
-			System.out.println("Error reading file '" + fileName + "'");
-			// Or we could just do this:
-			// ex.printStackTrace();
-		}
-
-
+		Packages pack = new Packages();
 	}
 
 }
