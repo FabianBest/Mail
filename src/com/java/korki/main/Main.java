@@ -12,6 +12,9 @@ public class Main {
 		CSVact.CSVChangingReceived("Konieczkowa");
 		System.out.println("");
 		CSVact.CSVReader();
+		System.out.println("");
+		CSVact.CSVDeleting("Miloszow");
+		CSVact.CSVReader();
 	}
 
 }

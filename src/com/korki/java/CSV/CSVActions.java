@@ -12,9 +12,10 @@ import java.util.List;
 public class CSVActions {
 
 	List<String> csvArray = new ArrayList<>();
+	
+	String fileName = "MailPackages.txt";
 
 	public void CSVReader() {
-		String fileName = "MailPackages.txt";
 
 		String line = null;
 
@@ -37,8 +38,6 @@ public class CSVActions {
 
 	public int CSVSearch(String name) {
 		int CSVFound = 0;
-
-		String fileName = "MailPackages.txt";
 
 		String line = null;
 
@@ -82,8 +81,6 @@ public class CSVActions {
 
 		//////////////////////////////////////
 
-		String fileName = "MailPackages.txt";
-
 		try {
 			FileReader fileReader = new FileReader(fileName);
 
@@ -103,6 +100,36 @@ public class CSVActions {
 		} catch (IOException e) {
 			System.out.println("Error reading file '" + fileName + "'");
 		}
+		
+		csvArray.clear();
+	}
+	
+	public void CSVDeleting(String name) {
+		int csvFound = CSVSearch(name);
+		if(csvFound != 0) {
+			csvArray.remove(csvFound);
+		}		
+		try {
+			FileReader fileReader = new FileReader(fileName);
+
+			FileWriter fileWriter = new FileWriter(fileName, false);
+
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+			BufferedWriter bufferedWritter = new BufferedWriter(fileWriter);
+
+			for (int i = 0; i < csvArray.size(); i++) {
+				bufferedWritter.write(csvArray.get(i) + "\n");
+			}
+			bufferedReader.close();
+			bufferedWritter.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		} catch (IOException e) {
+			System.out.println("Error reading file '" + fileName + "'");
+		}
+		
+		csvArray.clear();
 	}
 
 }

@@ -1,4 +1,3 @@
 sName;sSurname;sAddress;rAddress;rName;rSurname;mailMan;received
-Konieczkowa 22/1;Lukasz;Harabaka;Miloszow 312/1;Mikolaj;Stewczyk;Zdzislaw Stonoga;false
-Miloszow 22/1;kas;dsa;dsa;dsa;dsa;Zdzislaw Stonoga;false
+Konieczkowa 22/1;Lukasz;Harabaka;Miloszww 312/1;Mikolaj;Stewczyk;Zdzislaw Stonoga;true
 Konieczko;dasdk;daskdsajdsa;sadcxz;dsadsad;dasdsad;Zdzislaw Stonoga;false
