@@ -1,1 +1,2 @@
-nowo 22/1;£ukasz;Hanszke;kurwowo 31/1;Zdzis³aw;Kunoga
+sName;sSurname;sAddress;rAddress;rName;rSurname;mailMan;received
+Konieczkowa 22/1;£ukasz;Harabaka;Mi³oszów 312/1;Miko³aj;Stewczyk;Zdzis³aw Stonoga;false
