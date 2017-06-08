@@ -1,2 +1,7 @@
 sName;sSurname;sAddress;rAddress;rName;rSurname;mailMan;received
 Konieczkowa 22/1;£ukasz;Harabaka;Mi³oszów 312/1;Miko³aj;Stewczyk;Zdzis³aw Stonoga;false
+Mi³oszow 22/1;kas;dsa;dsa;dsa;dsa;Zdzis³aw Stonoga;false
+Konieczko;dasdk;daskdsajdsa;sadcxz;dsadsad;dasdsad;Zdzis³aw Stonoga;false
+1;1;1;1;1;1;Zdzis³aw Stonoga;false
+1;1;1;1;1;1;Zdzis³aw Stonoga;false
+2;2;2;2;2;2;W³adimir Putin;false

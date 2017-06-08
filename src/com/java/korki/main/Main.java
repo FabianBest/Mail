@@ -9,6 +9,7 @@ public class Main {
 		Packages pack = new Packages();
 		CSVActions CSVact = new CSVActions();
 		CSVact.CSVReader();
+		CSVact.CSVSearch("Konieczkowa");
 	}
 
 }

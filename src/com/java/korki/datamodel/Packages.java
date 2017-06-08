@@ -2,6 +2,7 @@ package com.java.korki.datamodel;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -71,9 +72,11 @@ public class Packages implements CSVHandler {
 			
 			bufferedWriter.write(senderAddress + ";" + senderName + ";" + senderSurname + ";" +
 					receiverAddress + ";" + receiverName + ";" + receiverSurname + ";" +
-					mailMan + ";" + received);
-			
-			bufferedWriter.close();
+					mailMan + ";" + received);	
+		
+		bufferedWriter.close();
+	} catch(FileNotFoundException e) {
+			System.out.println("Error writing file: " + fileName);
 		} catch(IOException e) {
 			System.out.println("Error writing file: " + fileName);
 		}
